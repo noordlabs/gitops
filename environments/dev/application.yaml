@@ -1,0 +1,27 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: develop
+  namespace: argocd
+  labels:
+    environment: dev
+spec:
+  project: dev
+  source:
+    repoURL: https://github.com/noordlabs/data-platform-v1
+    targetRevision: refs/heads/develop
+    path: apps
+    directory:
+      recurse: true
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: dev
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    retry:
+      limit: 20
+      backoff:
+        duration: 10s
+        factor: 2
