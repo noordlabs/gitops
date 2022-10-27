@@ -10,7 +10,7 @@ spec:
   source:
     repoURL: https://github.com/noordlabs/data-platform-v1
     targetRevision: refs/heads/main
-    path: apps
+    path: platform/argo/argo-spec/apps/
     directory:
       recurse: true
   destination:
