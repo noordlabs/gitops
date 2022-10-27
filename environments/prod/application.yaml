@@ -11,8 +11,8 @@ spec:
     repoURL: https://github.com/noordlabs/data-platform-v1
     targetRevision: refs/heads/main
     path: platform/argo/argo-spec/apps/
-    directory:
-      recurse: true
+#    directory:
+#      recurse: true
   destination:
     server: https://kubernetes.default.svc
     namespace: prod
